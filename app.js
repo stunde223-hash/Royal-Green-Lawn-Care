@@ -67,3 +67,63 @@ if (form) {
     }
   });
 }
+
+// Show the planner one stage at a time; the complete form works as a fallback.
+if (form) {
+  const steps = [...form.querySelectorAll('.form-step')];
+  const progress = [...form.querySelectorAll('.planner-progress > span')];
+  const next = document.querySelector('#next-step');
+  const back = document.querySelector('#previous-step');
+  const submit = document.querySelector('#prepare-enquiry');
+  let current = 0;
+  form.classList.add('is-guided');
+  form.noValidate = true;
+  form.querySelector('.planner-progress').hidden = false;
+  form.querySelector('.planner-controls').hidden = false;
+  const showStep = (index, focus = true) => {
+    current = index;
+    steps.forEach((step, i) => { step.hidden = i !== index; });
+    progress.forEach((item, i) => {
+      item.classList.toggle('current', i === index);
+      if (i === index) item.setAttribute('aria-current', 'step');
+      else item.removeAttribute('aria-current');
+    });
+    back.disabled = index === 0;
+    next.hidden = index === steps.length - 1;
+    submit.hidden = index !== steps.length - 1;
+    next.innerHTML = `${index === 0 ? 'Next: your yard' : 'Next: your details'} <span class="outbound-arrow" aria-hidden="true"></span>`;
+    document.querySelector('#step-count').textContent = `STEP ${index + 1} OF ${steps.length}`;
+    if (focus) {
+      const legend = steps[index].querySelector('legend');
+      legend.tabIndex = -1;
+      legend.focus();
+    }
+  };
+  const validateStep = index => {
+    if (index === 0 && !form.querySelector('[name="service"]:checked')) {
+      document.querySelector('#service-error').textContent = 'Choose at least one service to start your plan.';
+      form.querySelector('[name="service"]').focus();
+      return false;
+    }
+    for (const field of steps[index].querySelectorAll('input:not([type="checkbox"]), textarea, select')) {
+      if (field.required && !field.value.trim()) field.setCustomValidity('Please fill out this field.');
+      else field.setCustomValidity('');
+      if (!field.reportValidity()) return false;
+    }
+    return true;
+  };
+  form.addEventListener('input', event => { if (event.target.setCustomValidity) event.target.setCustomValidity(''); });
+  next.addEventListener('click', () => { if (validateStep(current)) showStep(current + 1); });
+  back.addEventListener('click', () => showStep(Math.max(0, current - 1)));
+  form.addEventListener('submit', event => {
+    const requestedStep = current;
+    for (let index = 0; index <= requestedStep; index++) {
+      showStep(index, false);
+      if (!validateStep(index)) { event.preventDefault(); event.stopImmediatePropagation(); return; }
+    }
+    if (current < steps.length - 1) {
+      event.preventDefault(); event.stopImmediatePropagation(); showStep(current + 1);
+    }
+  }, true);
+  showStep(0, false);
+}
