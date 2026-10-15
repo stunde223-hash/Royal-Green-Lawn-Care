@@ -17,3 +17,6 @@ Confirm photo rights, extra service availability, contact details, and legal cop
 Publish the repository root from the selected branch through GitHub Settings > Pages. All internal paths are relative for project-site compatibility. No deployment has been performed.
 
 Use the existing checkout. Cloud tasks are already isolated; do not create a worktree unless requested.
+
+## Yard enquiry form
+The interactive job sheet validates required contact details and at least one service, then prepares a reviewable email draft. It does not deliver messages directly or store entries. Visitors send through their own email app or copy into webmail. Direct delivery requires a separately configured form endpoint.
