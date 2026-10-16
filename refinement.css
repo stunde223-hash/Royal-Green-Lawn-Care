@@ -49,3 +49,22 @@ input::placeholder,textarea::placeholder{font-weight:700;opacity:1}
 .work-grid,.detail-gallery{gap:28px}.work-grid .project-image{border:0}
 @media(max-width:700px){.work-grid,.detail-gallery{gap:14px}}
 @media(max-width:480px){.work-grid,.detail-gallery{gap:28px}}
+/* Service-area and call section inspired by the supplied Nomadic reference. */
+.callout{position:relative;isolation:isolate;overflow:hidden;min-height:620px;background:#111d16;color:var(--paper);padding:65px 6% 55px}
+.callout:before{content:'';position:absolute;inset:0;z-index:-2;background:url('assets/enhanced/lawn-detail.webp') center 60%/cover no-repeat}
+.callout:after{content:'';position:absolute;inset:0;z-index:-1;background:rgba(7,15,10,.9)}
+.callout-content{position:relative;z-index:2;max-width:810px}.callout .eyebrow{font-size:10px;color:var(--accent)}
+.callout h2{font-size:clamp(62px,7.8vw,115px);line-height:.91;letter-spacing:-.02em}.callout h2 em{color:var(--accent)}
+.callout-copy{font-size:14px;line-height:1.7;max-width:360px;margin:30px 0 24px}.callout-note{font-size:9px;color:#a9b2a3;margin-top:17px}
+.callout-bottom{position:absolute;right:6%;bottom:55px;width:43%;height:190px}.callout-outline{position:absolute;right:0;bottom:-45px;white-space:nowrap;font:700 clamp(100px,13vw,200px)/1 'Barlow Condensed',sans-serif;color:transparent;-webkit-text-stroke:1px #9b80513b;z-index:0;pointer-events:none}
+.callout-bottom ul{position:absolute;bottom:0;right:0;left:0;display:grid;grid-template-columns:repeat(4,1fr);padding:0;margin:0;list-style:none;border-top:1px solid #69705a}
+.callout-bottom li{padding:17px 12px 0;border-right:1px solid #69705a;font:700 28px/1 'Barlow Condensed',sans-serif}.callout-bottom li:first-child{border-left:1px solid #69705a}.callout-bottom li span{display:block;font:700 8px/1.5 'DM Sans',sans-serif;letter-spacing:.1em;color:#b9bfaf;margin-bottom:8px}
+.map-section{grid-template-columns:minmax(0,.85fr) minmax(0,1.3fr);gap:6%;align-items:start;padding-top:65px;padding-bottom:65px;background:var(--paper)}
+.map-section h2{font-size:clamp(55px,5.5vw,83px);line-height:.94}.map-section h2 em{color:#896535}.map-section .eyebrow{color:#896535}.area-copy>p:not(.eyebrow){max-width:410px;font-size:13px;line-height:1.8;margin:25px 0}
+.area-city-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));list-style:none;padding:0;margin:28px 0 12px;gap:0 20px;border-top:1px solid #aeb6a6}.area-city-list li{border-bottom:1px solid #b7beaf;padding:12px 0;font-size:11px;display:flex;gap:9px;align-items:center}.area-city-list li:before{content:'';width:4px;height:4px;background:#8c947f;flex-shrink:0}
+.area-map{min-width:0;margin:0;background:#101a15;padding:12px}.area-map svg{display:block;width:100%;height:auto}.area-map figcaption{font-size:9px;color:#b6c0ad;line-height:1.6;border:0;padding:8px 20px 12px}
+.reference-footer .footer-wordmark{font-weight:500!important;font-size:clamp(70px,19vw,300px);letter-spacing:-.025em;line-height:.88;color:#202b23;margin-top:65px;margin-bottom:0;overflow:hidden}
+.reference-footer .footer-bottom{position:relative;margin-top:-7px;padding-top:23px;background:transparent}
+@media(max-width:1000px){.callout{min-height:620px}.callout h2{font-size:84px}.callout-bottom{width:41%;right:5%}.callout-bottom li{font-size:25px;padding-left:9px;padding-right:9px}.callout-bottom li span{font-size:7px}.map-section{gap:4%;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr)}.map-section h2{font-size:61px}.area-city-list{gap:0 12px}.area-city-list li{font-size:10px}}
+@media(max-width:700px){.callout{padding:55px 6% 35px;min-height:0}.callout h2{font-size:clamp(48px,9.7vw,68px)}.callout-copy{font-size:13px;max-width:340px}.callout-bottom{position:relative;right:auto;bottom:auto;width:100%;height:125px;margin-top:25px}.callout-outline{font-size:24vw;bottom:-12px;right:0}.callout-bottom ul{bottom:10px}.callout-bottom li{font-size:26px}.callout-bottom li span{font-size:7px}.map-section{grid-template-columns:1fr;gap:35px}.map-section h2{font-size:65px}.area-copy>p:not(.eyebrow){max-width:none}.area-city-list li{font-size:12px}.area-map{padding:4px}.area-map figcaption{font-size:9px;padding:6px 12px 12px}.reference-footer .footer-wordmark{font-size:18.6vw;line-height:.95;margin-top:40px}.reference-footer .footer-bottom{margin-top:0}}
+@media(max-width:380px){.callout h2{font-size:46px}.callout .button{font-size:11px;gap:15px;padding:16px}.map-section h2{font-size:57px}.area-city-list li{font-size:10px}}
