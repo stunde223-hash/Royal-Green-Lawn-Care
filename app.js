@@ -42,7 +42,13 @@ if (form) {
       'Please let me know about availability and next steps.'
     ].join('\n');
     document.querySelector('#draft-message').value = message;
-    document.querySelector('#email-draft-link').href = `mailto:oluwafemiemmanuel@gmail.com?subject=${encodeURIComponent('Yard care enquiry')}&body=${encodeURIComponent(message)}`;
+    const gmailURL = new URL('https://mail.google.com/mail/');
+    gmailURL.search = new URLSearchParams({
+      view: 'cm', fs: '1', to: 'oluwafemiemmanuel@gmail.com',
+      su: 'Yard care enquiry', body: message
+    }).toString();
+    document.querySelector('#email-draft-link').href = gmailURL.href;
+    window.open(gmailURL.href, '_blank', 'noopener,noreferrer');
     draft.hidden = false;
     draft.focus();
     draft.scrollIntoView({behavior: 'auto', block: 'start'});
@@ -78,7 +84,7 @@ if (imageViewer) {
     document.querySelector('#viewer-count').textContent = `${active + 1} / ${links.length}`;
     document.querySelector('#viewer-note').textContent = original
       ? 'Original supplied photo, 206 × 206 pixels. Enlarging it will appear soft.'
-      : 'AI-enhanced reconstruction. Fine details may differ from the original.';
+      : '';
     originalToggle.textContent = original ? 'View enhanced image' : 'View original photo';
   };
   const move = offset => { active = (active + offset + links.length) % links.length; original = false; renderImage(); };
