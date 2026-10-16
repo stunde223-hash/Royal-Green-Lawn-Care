@@ -15,6 +15,7 @@ document.querySelector('#year').textContent = new Date().getFullYear();
 
 const form = document.querySelector('#yard-form');
 if (form) {
+  form.querySelector('[type=submit]').disabled = false;
   const draft = document.querySelector('#enquiry-draft');
   form.addEventListener('input', event => {
     if (event.target.setCustomValidity) event.target.setCustomValidity('');

@@ -75,3 +75,10 @@ input::placeholder,textarea::placeholder{font-weight:700;opacity:1}
 @media(max-width:700px){.reference-footer .custom-wordmark{margin-top:40px}}
 .custom-wordmark svg{font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-size:260px}
 .custom-wordmark svg text,.custom-wordmark svg use{font-weight:500!important}
+/* Mobile usability and loading improvements. */
+.callout:before{background:none}.callout-background{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 60%;z-index:-2;pointer-events:none}
+.map-section .eyebrow{color:#775426}.skip-link{position:fixed;top:12px;left:12px;padding:12px 20px;background:var(--paper);color:var(--ink);z-index:1000;transform:translateY(-200%)}.skip-link:focus{transform:translateY(0)}
+.menu-toggle,#close-viewer,#toggle-original,.viewer-controls button,.text-button{min-height:44px}
+@media(max-width:700px){.standard-form input,.standard-form select,.standard-form textarea{font-size:16px}.footer-top a:not(.brand),.footer-bottom a,.direct-contact a,.area-copy>.text-link{min-height:44px;display:inline-flex;align-items:center}.footer-bottom>div{gap:15px}.reference-footer .footer-top>div>a:not(.brand){display:flex;align-items:center}.hero-image-link{display:inline-flex;align-items:center;min-height:44px}.hero-bottom>a{min-height:44px;display:flex;align-items:center}.service-list summary{min-height:60px}.image-open{touch-action:manipulation}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important}}
+.hero-photo picture{display:block;width:100%;height:100%}.hero-photo picture img{display:block;width:100%;height:100%;object-fit:cover;position:absolute;inset:0}

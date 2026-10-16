@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://stunde223-hash.github.io/Royal-Green-Lawn-Care/sitemap.xml
