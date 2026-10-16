@@ -58,3 +58,45 @@ if (form) {
     }
   });
 }
+
+const imageViewer = document.querySelector('#image-viewer');
+if (imageViewer) {
+  const links = [...document.querySelectorAll('[data-photo]')];
+  const image = document.querySelector('#viewer-image');
+  const originalToggle = document.querySelector('#toggle-original');
+  let active = 0;
+  let original = false;
+  let opener;
+  const renderImage = () => {
+    const link = links[active];
+    const source = link.querySelector('img');
+    image.src = original ? `assets/${link.dataset.photo}.jpg` : link.getAttribute('href');
+    const caption = source?.alt || 'Lawn mowing in progress';
+    image.alt = `${original ? 'Original supplied photo' : 'AI-enhanced reconstruction'}: ${caption}`;
+    document.querySelector('#viewer-caption').textContent = caption;
+    document.querySelector('#viewer-count').textContent = `${active + 1} / ${links.length}`;
+    document.querySelector('#viewer-note').textContent = original
+      ? 'Original supplied photo, 206 × 206 pixels. Enlarging it will appear soft.'
+      : 'AI-enhanced reconstruction. Fine details may differ from the original.';
+    originalToggle.textContent = original ? 'View enhanced image' : 'View original photo';
+  };
+  const move = offset => { active = (active + offset + links.length) % links.length; original = false; renderImage(); };
+  links.forEach((link, index) => link.addEventListener('click', event => {
+    if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || typeof imageViewer.showModal !== 'function') return;
+    event.preventDefault(); opener = link; active = index; original = false;
+    renderImage(); imageViewer.showModal(); document.body.classList.add('viewer-open');
+  }));
+  document.querySelector('#close-viewer').addEventListener('click', () => imageViewer.close());
+  document.querySelector('#previous-image').addEventListener('click', () => move(-1));
+  document.querySelector('#next-image').addEventListener('click', () => move(1));
+  originalToggle.addEventListener('click', () => { original = !original; renderImage(); });
+  imageViewer.addEventListener('keydown', event => {
+    if (event.key === 'ArrowRight') { event.preventDefault(); move(1); }
+    if (event.key === 'ArrowLeft') { event.preventDefault(); move(-1); }
+  });
+  imageViewer.addEventListener('click', event => {
+    const bounds = imageViewer.getBoundingClientRect();
+    if (event.target === imageViewer && (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom)) imageViewer.close();
+  });
+  imageViewer.addEventListener('close', () => { document.body.classList.remove('viewer-open'); opener?.focus(); });
+}

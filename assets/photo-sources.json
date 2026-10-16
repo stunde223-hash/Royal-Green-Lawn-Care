@@ -5,6 +5,13 @@
     "dimensions": [
       206,
       206
+    ],
+    "original_file": "assets/hero-mowing.jpg",
+    "enhanced_file": "assets/enhanced/hero-mowing.webp",
+    "enhancement": "AI-generated photorealistic 3D-style reconstruction; not exact restoration",
+    "enhanced_dimensions": [
+      1536,
+      1024
     ]
   },
   {
@@ -13,6 +20,13 @@
     "dimensions": [
       206,
       206
+    ],
+    "original_file": "assets/service-edging.jpg",
+    "enhanced_file": "assets/enhanced/service-edging.webp",
+    "enhancement": "AI-generated photorealistic 3D-style reconstruction; not exact restoration",
+    "enhanced_dimensions": [
+      1254,
+      1254
     ]
   },
   {
@@ -21,6 +35,13 @@
     "dimensions": [
       206,
       206
+    ],
+    "original_file": "assets/striped-lawn.jpg",
+    "enhanced_file": "assets/enhanced/striped-lawn.webp",
+    "enhancement": "AI-generated photorealistic 3D-style reconstruction; not exact restoration",
+    "enhanced_dimensions": [
+      1254,
+      1254
     ]
   },
   {
@@ -29,6 +50,13 @@
     "dimensions": [
       206,
       206
+    ],
+    "original_file": "assets/yard-cleanup.jpg",
+    "enhanced_file": "assets/enhanced/yard-cleanup.webp",
+    "enhancement": "AI-generated photorealistic 3D-style reconstruction; not exact restoration",
+    "enhanced_dimensions": [
+      1254,
+      1254
     ]
   },
   {
@@ -37,6 +65,13 @@
     "dimensions": [
       206,
       206
+    ],
+    "original_file": "assets/path-finishing.jpg",
+    "enhanced_file": "assets/enhanced/path-finishing.webp",
+    "enhancement": "AI-generated photorealistic 3D-style reconstruction; not exact restoration",
+    "enhanced_dimensions": [
+      1254,
+      1254
     ]
   },
   {
@@ -45,6 +80,13 @@
     "dimensions": [
       206,
       206
+    ],
+    "original_file": "assets/side-yard.jpg",
+    "enhanced_file": "assets/enhanced/side-yard.webp",
+    "enhancement": "AI-generated photorealistic 3D-style reconstruction; not exact restoration",
+    "enhanced_dimensions": [
+      1254,
+      1254
     ]
   },
   {
@@ -53,6 +95,13 @@
     "dimensions": [
       206,
       206
+    ],
+    "original_file": "assets/lawn-detail.jpg",
+    "enhanced_file": "assets/enhanced/lawn-detail.webp",
+    "enhancement": "AI-generated photorealistic 3D-style reconstruction; not exact restoration",
+    "enhanced_dimensions": [
+      1254,
+      1254
     ]
   },
   {
@@ -61,6 +110,13 @@
     "dimensions": [
       206,
       206
+    ],
+    "original_file": "assets/garden-yard.jpg",
+    "enhanced_file": "assets/enhanced/garden-yard.webp",
+    "enhancement": "AI-generated photorealistic 3D-style reconstruction; not exact restoration",
+    "enhanced_dimensions": [
+      1254,
+      1254
     ]
   }
 ]
