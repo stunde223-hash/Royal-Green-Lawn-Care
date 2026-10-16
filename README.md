@@ -19,4 +19,4 @@ Publish the repository root from the selected branch through GitHub Settings > P
 Use the existing checkout. Cloud tasks are already isolated; do not create a worktree unless requested.
 
 ## Yard enquiry form
-The interactive job sheet validates required contact details and at least one service, then prepares a reviewable email draft. It does not deliver messages directly or store entries. Visitors send through their own email app or copy into webmail. Direct delivery requires a separately configured form endpoint.
+The single-page enquiry form validates required contact details and a service selection, then prepares a reviewable email draft. It does not deliver messages directly or store entries. Visitors send through their own email app or copy into webmail. Direct delivery requires a separately configured form endpoint.
