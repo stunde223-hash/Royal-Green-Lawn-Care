@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://stunde223-hash.github.io/Royal-Green-Lawn-Care/sitemap.xml
+Sitemap: https://royal-green-lawn-care.stunde223.workers.dev/sitemap.xml

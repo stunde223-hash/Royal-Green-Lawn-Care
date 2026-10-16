@@ -34,12 +34,12 @@ At a 390px viewport with device scale factor 3, initial resource transfers decre
 
 ## Public-site follow-up
 
-Canonical and social URLs currently use https://stunde223-hash.github.io/Royal-Green-Lawn-Care/ because no alternative live URL was supplied. Update these URLs in all three HTML pages, sitemap.xml, and robots.txt if a custom or Cloudflare domain is the final home. Avoid competing canonical domains.
+Canonical, social, structured-data, sitemap, and robots URLs use https://royal-green-lawn-care.stunde223.workers.dev/ as supplied by the Cloudflare production dashboard. Update these together if a custom domain is added.
 
 After deployment, verify the real public URL in Google Search Console and submit sitemap.xml. Account verification and sitemap submission have not been performed. An eligible Google Business Profile with accurate real-world service-area details is a separate step; no profile was created or edited.
 
-A robots.txt file in a GitHub project subdirectory is not the host-root robots policy. The host-root file controls crawling; the sitemap may be submitted directly in Search Console. This project file also supports deployment at a custom-domain root.
+The robots.txt file is deployed at the production host root and references the production sitemap.
 
 Caching, compression, HTTPS, canonical redirects, indexability, and real-user Core Web Vitals still need verification on the final public host. The local test server does not emulate production caching. Local scores do not establish live publication, Google indexing, or rich-result eligibility.
 
-The form prepares a message for the visitor to send through email. It does not silently submit enquiries to a server. Images remain clearly labeled AI-enhanced reconstructions.
+The form prepares a message for the visitor to send through email. It does not silently submit enquiries to a server. Image labels were removed at the owner’s request; source provenance remains documented.
