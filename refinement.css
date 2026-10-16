@@ -73,3 +73,5 @@ input::placeholder,textarea::placeholder{font-weight:700;opacity:1}
 .custom-wordmark svg{display:block;width:100%;height:auto;overflow:visible}
 .custom-wordmark .wordmark-lettering,.custom-wordmark .wordmark-lettering text{font-weight:500!important}
 @media(max-width:700px){.reference-footer .custom-wordmark{margin-top:40px}}
+.custom-wordmark svg{font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-size:260px}
+.custom-wordmark svg text,.custom-wordmark svg use{font-weight:500!important}
